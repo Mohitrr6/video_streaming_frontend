@@ -1,0 +1,27 @@
+.upload-page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  width: 100%;
+  background: #f8fafc;
+}
+
+.sidebar-section {
+  background: #f8f9fa;
+  border-right: 1px solid #e5e7eb;
+}
+
+.content-section {
+  width: 100%;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content-section .upload-form {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
