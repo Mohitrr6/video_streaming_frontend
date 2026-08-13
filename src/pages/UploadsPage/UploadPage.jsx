@@ -1,4 +1,4 @@
-import Sidebar from "../../components/sidebar";
+import Sidebar from "../../components/Sidebar";
 import UploadForm from "../../components/uploadForm/UploadForm";
 import "./UploadPage.css";
 
