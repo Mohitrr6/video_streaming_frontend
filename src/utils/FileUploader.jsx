@@ -7,8 +7,7 @@ const FileUploader = async(file, uploadId, onProgress, onComplete) => {
         target: "http://localhost:3000/api/media/upload",
 
         headers: {
-            upload_id: uploadId,
-            "authorization": `Bearer ${localStorage.getItem("token")}`
+            upload_id: uploadId
         },
 
         chunkSize: 5 * 1024 * 1024,
