@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useLocation,useNavigate } from "react-router-dom";
-import SearchBar from "../searchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import "./HeaderBar.css";
 
 const HeaderBar = ({ onLoginClick, onSignupClick }) => {
