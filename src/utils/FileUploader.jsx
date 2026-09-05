@@ -4,7 +4,7 @@ const FileUploader = async(file, uploadId, onProgress, onComplete) => {
 
 
     const r = new Resumable({
-        target: `${import.meta.env.VITE_API_BASE_URL}/api/media/upload`,
+        target: `${import.meta.env.VITE_BACKEND_URL}/api/media/upload`,
 
         headers: {
             upload_id: uploadId,
