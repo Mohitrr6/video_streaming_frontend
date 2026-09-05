@@ -28,7 +28,7 @@ const UploadForm = () => {
         //     title,
         //     description,
         // });
-        const uploadIdAPIResponse = await fetch("http://localhost:3000/api/media/get/uploadId");
+        const uploadIdAPIResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/media/get/uploadId`);
         const uploadIdAPIResult  = await uploadIdAPIResponse.json();
         console.log("upload id api response",uploadIdAPIResult)
         // console.log(result);
@@ -46,7 +46,7 @@ const UploadForm = () => {
                 async(status,total_chunks) => {
                     if (status) {
 
-                        const verifyApiResponse = await fetch("http://localhost:3000/api/media/verify", {
+                        const verifyApiResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/media/verify`, {
                             headers: {
                                 "upload_id": uploadIdAPIResult.data,
                                 "total_chunks": total_chunks
