@@ -23,12 +23,26 @@ const UploadForm = () => {
         const title = e.target["video-title"].value;
         const description = e.target["video-description"].value;
 
+        console.log(title,description);
+        const videoDetail = {
+                                "title": title,
+                                "description": description
+                            }
         // console.log("Submitting upload form", {
         //     file,
         //     title,
         //     description,
         // });
+<<<<<<< HEAD
         const uploadIdAPIResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/media/get/uploadId`);
+=======
+        const uploadIdAPIResponse = await fetch("http://localhost:3000/api/media/get/uploadId",{
+            "method": 'GET',
+            "headers":{
+                "authorization": `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+>>>>>>> parent of 3154bc8 (Revert "Reapply "adding new feature to website"")
         const uploadIdAPIResult  = await uploadIdAPIResponse.json();
         console.log("upload id api response",uploadIdAPIResult)
         // console.log(result);
@@ -46,11 +60,20 @@ const UploadForm = () => {
                 async(status,total_chunks) => {
                     if (status) {
 
+<<<<<<< HEAD
                         const verifyApiResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/media/verify`, {
                             headers: {
+=======
+                        const verifyApiResponse = await fetch("http://localhost:3000/api/media/verify", {
+                            "method": "POST",
+                            "headers": {
+>>>>>>> parent of 3154bc8 (Revert "Reapply "adding new feature to website"")
                                 "upload_id": uploadIdAPIResult.data,
-                                "total_chunks": total_chunks
-                            }
+                                "total_chunks": total_chunks,
+                                "Content-Type": "application/json",
+                                "authorization" : `Bearer ${localStorage.getItem("token")}`
+                            },
+                            "body": JSON.stringify(videoDetail),
                         })
                         const verifyApiResult = await verifyApiResponse.json();
                         if (verifyApiResult.success) {

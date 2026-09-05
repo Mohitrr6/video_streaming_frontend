@@ -7,7 +7,8 @@ const FileUploader = async(file, uploadId, onProgress, onComplete) => {
         target: `${import.meta.env.VITE_API_BASE_URL}/api/media/upload`,
 
         headers: {
-            upload_id: uploadId
+            upload_id: uploadId,
+            "authorization": `Bearer ${localStorage.getItem("token")}`
         },
 
         chunkSize: 5 * 1024 * 1024,

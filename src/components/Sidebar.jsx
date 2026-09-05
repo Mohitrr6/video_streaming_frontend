@@ -9,7 +9,7 @@ import {useState} from "react";
 const Sidebar = () => {
   const {isLoggedIn} = useSelector((state) => state.user);
   const [activeTab, setActiveTab] = useState("home");
-  // console.log("isLoggedIn",isLoggedIn);
+  console.log("isuserLoggged in ",isLoggedIn);
   let navigate = useNavigate();
   return (
     <div className="sidebar">
@@ -17,7 +17,7 @@ const Sidebar = () => {
         <div className="brand-icon">S</div>
         <div>
           <h2>Streamz</h2>
-          <p>Watch. Upload. Share.</p>
+          <p>Watch. Upload. Sh.</p>
         </div>
       </div>
 
