@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchvideos = createAsyncThunk(
     'media/fetchVideos',
     async () => {
-        const response = await fetch('http://localhost:3000/api/media/videos');
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/media/videos`);
         const result = await response.json();
         return result.data;
     }

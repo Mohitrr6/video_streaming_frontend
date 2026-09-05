@@ -34,7 +34,7 @@ const UploadForm = () => {
         //     description,
         // });
 
-        const uploadIdAPIResponse = await fetch("http://localhost:3000/api/media/get/uploadId",{
+        const uploadIdAPIResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/media/get/uploadId`,{
             "method": 'GET',
             "headers":{
                 "authorization": `Bearer ${localStorage.getItem('token')}`
@@ -59,7 +59,7 @@ const UploadForm = () => {
                     if (status) {
 
 
-                        const verifyApiResponse = await fetch("http://localhost:3000/api/media/verify", {
+                        const verifyApiResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/media/verify`, {
                             "method": "POST",
                             "headers": {
 

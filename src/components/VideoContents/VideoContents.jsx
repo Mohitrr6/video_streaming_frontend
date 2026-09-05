@@ -32,7 +32,7 @@ const {videos,loading,error}= useSelector((state)=>state.video);
       
       const user_name = e.target["name"].value;
       request_body.name = user_name;
-      const response = await fetch('http://localhost:3000/api/auth/register',
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`,
         
         {
           "method":'POST',
@@ -52,7 +52,7 @@ const {videos,loading,error}= useSelector((state)=>state.video);
       
       
       
-      const response = await fetch('http://localhost:3000/api/auth/login',
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`,
         
         {
           "method":'POST',
@@ -105,7 +105,7 @@ const {videos,loading,error}= useSelector((state)=>state.video);
               <div className="video-thumbnail-wrap">
                 <img
                   className="video-thumbnail"
-                  src={`http://localhost:3000/api/media/${video.video_id}/thumbnail`}
+                  src={`${import.meta.env.VITE_BACKEND_URL}/api/media/${video.video_id}/thumbnail`}
                   alt={video?.video_name || "Video thumbnail"}
                 />
                 <span className="video-play" aria-hidden="true">▶</span>

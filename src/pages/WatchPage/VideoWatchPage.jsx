@@ -24,7 +24,7 @@ const VideoWatchPage = () => {
       <HeaderBar />
       <div className="video-watch-page">
         <div className="video-player-section">
-          {videoPlayer({ src: `http://localhost:3000/api/media/${videoId}/manifest` })}
+          {videoPlayer({ src: `${import.meta.env.VITE_BACKEND_URL}/api/media/${videoId}/manifest` })}
         </div>
 
         <aside className="video-side-panel">
@@ -39,7 +39,7 @@ const VideoWatchPage = () => {
                 <li className="video-side-item" key={video.video_id} onClick={()=>navigate(`/watch/${video?.video_id}`)}>
                   <img
                     className="video-side-thumb"
-                    src={`http://localhost:3000/api/media/${video.video_id}/thumbnail`}
+                    src={`${import.meta.env.VITE_BACKEND_URL}/api/media/${video.video_id}/thumbnail`}
                     alt={video.video_name || 'Video thumbnail'}
                   />
                   <div className="video-side-meta">
